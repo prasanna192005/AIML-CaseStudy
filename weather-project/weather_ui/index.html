@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather AI Classifier</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.14.0/dist/ort.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Weather Image Classifier</h1>
+      <p>Upload any image → AI predicts weather in real-time</p>
+    </header>
+
+    <div class="upload-area" id="drop-area">
+      <p>Drag & drop image or click to upload</p>
+      <input type="file" id="file-input" accept="image/*" hidden />
+      <img id="preview" src="" alt="Preview" />
+    </div>
+
+    <button id="predict-btn" disabled>Predict Weather</button>
+
+    <div id="result" class="result hidden">
+      <h2>Prediction</h2>
+      <div id="bars"></div>
+      <p id="top-pred"></p>
+    </div>
+
+    <div class="info">
+      <h3>Model Info</h3>
+      <ul>
+        <li><strong>Classes:</strong> Cloudy, Foggy, Rain, Snow, Clear</li>
+        <li><strong>Accuracy:</strong> ~92%</li>
+        <li><strong>Inference:</strong> ONNX Runtime Web (browser)</li>
+        <li><strong>Offline:</strong> No internet needed</li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
