@@ -44,7 +44,21 @@ header p { color: #636e72; }
 .bar { height: 24px; background: #ddd; border-radius: 12px; overflow: hidden; }
 .bar-fill { height: 100%; width: 0%; background: #00b894; transition: width 0.8s ease; border-radius: 12px; }
 
-#top-pred { margin-top: 1rem; font-size: 1.3rem; font-weight: bold; color: #2d3436; }
+#top-pred strong {
+  color: #2d3436;
+  font-size: 1.3rem;
+}
+#top-pred span {
+  font-style: italic;
+  opacity: 0.9;
+  background: #f0f8ff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border-left: 3px solid #00b894;
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 0.95rem;
+}
 
 .info { margin-top: 2rem; padding: 1.5rem; background: #f8f9fa; border-radius: 12px; font-size: 0.95rem; }
 .info h3 { margin-bottom: 0.8rem; color: #2d3436; }

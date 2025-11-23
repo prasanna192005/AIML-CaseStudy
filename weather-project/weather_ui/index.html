@@ -3,24 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Weather AI Classifier</title>
+  <title>Weather AI + Gemini</title>
   <link rel="stylesheet" href="style.css" />
+  
+  <!-- ONNX Runtime -->
   <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.14.0/dist/ort.min.js"></script>
+  
+  <!-- GEMINI SDK - OFFICIAL ESM IMPORT -->
+  <script type="module">
+    import { GoogleGenerativeAI } from "https://esm.run/@google/generative-ai";
+    window.GoogleGenerativeAI = GoogleGenerativeAI;
+    console.log("Gemini SDK loaded via ESM");
+  </script>
+  
+  <!-- YOUR REAL GEMINI API KEY -->
+  <script>
+    // GET FREE KEY: https://aistudio.google.com/app/apikey
+    window.GEMINI_API_KEY = 'AIzaSyB9PbBgK4PbSW0HIgPoaIX0YXX8K-QHOdk';  
+  </script>
 </head>
 <body>
   <div class="container">
     <header>
-      <h1>Weather Image Classifier</h1>
-      <p>Upload any image → AI predicts weather in real-time</p>
+      <h1>Weather</h1>
+      <p>Upload image → AI predicts + Gemini gives lifestyle tips</p>
     </header>
 
     <div class="upload-area" id="drop-area">
-      <p>Drag & drop image or click to upload</p>
+      <p>Drag & drop or click to upload</p>
       <input type="file" id="file-input" accept="image/*" hidden />
       <img id="preview" src="" alt="Preview" />
     </div>
 
-    <button id="predict-btn" disabled>Predict Weather</button>
+    <button id="predict-btn" disabled>Predict + Get Tip</button>
 
     <div id="result" class="result hidden">
       <h2>Prediction</h2>
@@ -29,13 +44,13 @@
     </div>
 
     <div class="info">
-      <h3>Model Info</h3>
+      <!-- <h3>Powered By</h3>
       <ul>
-        <li><strong>Classes:</strong> Cloudy, Foggy, Rain, Snow, Clear</li>
-        <li><strong>Accuracy:</strong> ~92%</li>
-        <li><strong>Inference:</strong> ONNX Runtime Web (browser)</li>
-        <li><strong>Offline:</strong> No internet needed</li>
-      </ul>
+        <li><strong>Model:</strong> ResNet-18 (92% acc)</li>
+        <li><strong>Inference:</strong> ONNX Runtime (browser)</li>
+        <li><strong>Tips:</strong> Google Gemini AI (real-time)</li>
+        <li><strong>Offline:</strong> No server needed</li>
+      </ul> -->
     </div>
   </div>
 
